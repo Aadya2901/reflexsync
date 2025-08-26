@@ -12,7 +12,8 @@ To design a **responsive and interactive reflex training game** with multiple gr
 ---
 
 ## 🚀 Live Demo
-🔗 [Play ReflexSync](https://your-deployment-link-here.com)  
+🔗 [Play ReflexSync](https://reflexsync.netlify.app/)
+
 
 ---
 
@@ -47,8 +48,7 @@ To design a **responsive and interactive reflex training game** with multiple gr
 ### 🔊 Sound Effects
 - Click sound  
 - Success (on completion)  
-- Error (wrong click)  
-- Restart sound  
+- Error (wrong click)   
 
 ---
 
@@ -106,7 +106,7 @@ live-server
 ![Dark Mode](dark_mode.png)
 
 **Gameplay (Grid Options)**  
-![Dark Mode](grid_options.png)
+![Grid Options](grid_options.png)
 
 ---
 

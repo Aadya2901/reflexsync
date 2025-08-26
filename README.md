@@ -112,8 +112,8 @@ live-server
 
 ## 👥 Contributors
 
-| Name                                                | Role                                    |
-|-----------------------------------------------------|-----------------------------------------|
+| Name                                                | Role                                     |
+|-----------------------------------------------------|----------------------------------------- |
 | [Aadya2901](https://github.com/Aadya2901)           | Game logic, UI/UX design, responsiveness |
 
 ---
@@ -137,4 +137,5 @@ You are free to use and modify it for personal or educational purposes.
 
 ## 💬 Final Note
 *"Speed is the key. Can you beat your best reflex time?"*  
+
 Enjoy ReflexSync 🌸⚡  

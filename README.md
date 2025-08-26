@@ -95,14 +95,13 @@ live-server
 
 ## 📸 Screenshots
 
-### Gameplay (Light Mode)  
+📸 Screenshots
+
+**Gameplay (Light Mode)**  
 ![Light Mode](screenshots/light_mode.png)
 
-### Gameplay (Dark Mode)  
+**Gameplay (Dark Mode)**  
 ![Dark Mode](screenshots/dark_mode.png)
-
-### Grid Options  
-![Grid Options](screenshots/grid_options.png)
 
 ---
 

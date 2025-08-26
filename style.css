@@ -1,0 +1,297 @@
+/* ==============================================
+   GENERAL STYLES
+============================================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+  color: #333;
+  background: linear-gradient(135deg, #ffc6d1 0%, #ffd6e0 40%, #ffe6f0 70%, #fff7fb 100%);
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #F7E3E7 0%, #fdeef1 100%);
+  border: 2px solid #bbb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* ==============================================
+   CONTROLS (Buttons & Select)
+============================================== */
+.controls {
+  margin-bottom: 15px;
+}
+
+button, select {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #bbb;
+  transition: transform 0.15s, background-color 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  background: linear-gradient(145deg, #fff5f8 0%, #fdeef1 100%);
+  color: #222;
+}
+
+button:hover, select:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, #fdeef1 0%, #fff5f8 100%);
+}
+
+/* Dark mode buttons */
+body.dark button, 
+body.dark select {
+  background: linear-gradient(145deg, #1a0f1f 0%, #2b0f3a 50%, #3a0f29 100%);
+  border: 2px solid #222;
+  color: #f0f0f0;
+}
+
+body.dark button:hover, 
+body.dark select:hover {
+  background: linear-gradient(145deg, #3a0f29 0%, #2b0f3a 100%);
+  box-shadow: 0 4px 10px rgba(255,255,255,0.15);
+}
+
+/* ==============================================
+   TIMER & HIGH SCORE
+============================================== */
+#timer, #highScore {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+#highScore.new {
+  color: #4caf50;
+  font-weight: bold;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #4caf50; }
+  to { text-shadow: 0 0 20px #4caf50; }
+}
+
+/* ==============================================
+   GRID & CELLS
+============================================== */
+#grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #F7E3E7 0%, #fff5f7 100%);
+  border: 2px solid #bbb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.cell {
+  background: #fff5f8;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  padding: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cell.correct {
+  background-color: #a8e6a1;
+  border: 2px solid #6fbf73;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(111, 191, 115, 0.6);
+}
+
+.cell.wrong {
+  background-color: #ffb3b3;
+  border: 2px solid #e57373;
+  color: #fff;
+  animation: wiggle 0.3s ease;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes restartAnim {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+#grid.restart {
+  animation: restartAnim 0.5s ease;
+}
+
+/* ==============================================
+   COUNTDOWN OVERLAY
+============================================== */
+#countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#countdown-text {
+  font-size: 8rem;
+  color: #fff;
+  font-weight: bold;
+  animation: pop 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.2); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+
+/* ==============================================
+   DARK MODE
+============================================== */
+body.dark {
+  background: linear-gradient(135deg, #1a0f1f 0%, #2b0f3a 50%, #3a0f29 100%);
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background: linear-gradient(135deg, #1a0f1f 0%, #2b0f3a 50%, #3a0f29 100%);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  color: #f0f0f0;
+}
+
+body.dark #grid {
+  background: inherit;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .cell {
+  background-color: #111;
+  border: 2px solid #222;
+  color: #f0f0f0;
+}
+
+/* ✅ Dark muted green for correct */
+body.dark .cell.correct {
+  background-color: #1b5e20;
+  border: 2px solid #2e7d32;
+  box-shadow: 0 0 6px rgba(46, 125, 50, 0.35);
+}
+
+/* ❌ Dark muted red for wrong */
+body.dark .cell.wrong {
+  background-color: #7f1d1d;
+  border: 2px solid #b91c1c;
+  box-shadow: 0 0 6px rgba(185, 28, 28, 0.35);
+}
+
+/* ✨ Dark mode softer hover */
+body.dark .cell:hover {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
+}
+
+/* ==============================================
+   RESPONSIVE
+============================================== */
+@media (max-width: 600px) {
+  .cell {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fbe1e7 0%, #f9d3da 100%); /* deeper pink */
+  border: 2px solid #aaa; /* slightly darker border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+#grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #fff0f3 0%, #ffe4eb 100%); /* contrasty soft pink */
+  border: 2px solid #aaa;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.cell {
+  background: #fff;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  padding: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 👈 instead of center */
+  min-height: 100vh;       /* 👈 allow growth */
+  margin: 0;
+  overflow-y: auto;        /* 👈 allow scroll if needed */
+}
+

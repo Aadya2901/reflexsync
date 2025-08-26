@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReflexSync</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>ReflexSync</h1>
+
+    <div class="controls">
+      <label for="gridSize">Grid Size:</label>
+      <select id="gridSize" onchange="startGame()">
+        <option value="3">3×3</option>
+        <option value="4">4×4</option>
+        <option value="5" selected>5×5</option>
+        <option value="6">6×6</option>
+      </select>
+
+      <button onclick="startGame()">Restart</button>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <div id="timer">Time: 0s</div>
+    <div id="highScore">High Score: --</div>
+    <div id="grid" class="grid"></div>
+  </div>
+
+  <!-- Sound effects -->
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+  <audio id="completeSound" src="success.mp3" preload="auto"></audio>
+  <audio id="wrongSound" src="wrong.mp3" preload="auto"></audio>
+  <audio id="restartSound" src="restart.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>

@@ -56,13 +56,15 @@ To design a **responsive and interactive reflex training game** with multiple gr
 ```
 reflexsync/
 ├── index.html       # Main HTML file
-├── 2.css            # Game styles
-├── 2.js             # Game logic
+├── style.css        # Game styles
+├── script.js        # Game logic
 ├── click.mp3        # Sound effects
 ├── success.mp3
 ├── wrong.mp3
 ├── restart.mp3
-├── screenshots/     # Gameplay screenshots
+├── dark_mode.png
+├── light_mode.png
+├── grid_options.png
 └── README.md        # Project documentation
 ```
 
@@ -98,10 +100,13 @@ live-server
 📸 Screenshots
 
 **Gameplay (Light Mode)**  
-![Light Mode](screenshots/light_mode.png)
+![Light Mode](light_mode.png)
 
 **Gameplay (Dark Mode)**  
-![Dark Mode](screenshots/dark_mode.png)
+![Dark Mode](dark_mode.png)
+
+**Gameplay (Grid Options)**  
+![Dark Mode](grid_options.png)
 
 ---
 

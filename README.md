@@ -1,6 +1,5 @@
 # 🎯 ReflexSync  
-🌸 Reflexes, reimagined.           
-🌸 Relaxing looks, intense reflex challenge.  
+🌸 Reflexes, reimagined.             
 
 A pastel-themed reflex training game where players must **click highlighted cells in sequence** as quickly as possible.  
 The game blends a **minimal UI**, **soft gradients**, and **dark/light themes** with addictive reflex-based gameplay.  
